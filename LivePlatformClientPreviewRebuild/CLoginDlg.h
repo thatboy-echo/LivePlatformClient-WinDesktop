@@ -35,4 +35,6 @@ public:
 	afx_msg void OnStnClickedForgetpassword();
 	afx_msg void OnBnClickedOk();
 	virtual BOOL OnInitDialog();
+	CString szAccount;
+	CString szPassword;
 };

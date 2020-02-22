@@ -13,6 +13,8 @@ IMPLEMENT_DYNAMIC(CLoginDlg, CDragDialogEx)
 
 CLoginDlg::CLoginDlg(CWnd* pParent /*=nullptr*/)
 	: CDragDialogEx(IDD_LOGIN, pParent)
+	, szAccount(_T(""))
+	, szPassword(_T(""))
 {
 	m_hIcon = AfxGetApp()->LoadIcon(IDI_LIVEBLUE);
 }
@@ -27,6 +29,9 @@ void CLoginDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDOK, bnLogin);
 	DDX_Control(pDX, IDCLOSE, bnClose);
 	DDX_Control(pDX, IDMINIMIZE, bnMiniMize);
+	DDX_CBString(pDX, IDCSQ_ACCOUNT, szAccount);
+	DDX_Text(pDX, IDCSQ_PASSWORD, szPassword);
+	DDV_MaxChars(pDX, szPassword, 20);
 }
 
 
@@ -57,8 +62,8 @@ BOOL CLoginDlg::OnInitDialog()
 	SetIcon(m_hIcon, FALSE);		// 设置小图标
 
 	//test
-	CDragDialogEx dlg;
-	dlg.DoModal();
+	// CDragDialogEx dlg;
+	// dlg.DoModal();
 
 	// 加载图标
 	bnLogin.LoadImagesFromResource(IDBSQ_BNLOGIN);

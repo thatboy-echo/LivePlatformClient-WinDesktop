@@ -39,8 +39,6 @@ BOOL CDragDialogEx::OnInitDialog()
 {
 	CDialogEx::OnInitDialog();
 
-	CDialogEx::ModifyStyle(WS_EX_DLGMODALFRAME | WS_CAPTION | WS_SYSMENU, WS_CLIPSIBLINGS | DS_MODALFRAME | WS_EX_WINDOWEDGE);
-
 	return TRUE;  // return TRUE unless you set the focus to a control
 				  // 异常: OCX 属性页应返回 FALSE
 }
